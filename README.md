@@ -23,30 +23,15 @@
 
 ## 🛠️ Tech Stack
 
-<table>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript" />
-      <br>JavaScript
-    </td>
-    <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="48" height="48" alt="TypeScript" />
-      <br>TypeScript
-    </td>
-    <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="48" height="48" alt="React" />
-      <br>React
-    </td>
-    <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="48" height="48" alt="Node.js" />
-      <br>Node.js
-    </td>
-    <td align="center" width="96">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="48" height="48" alt="Python" />
-      <br>Python
-    </td>
-  </tr>
-</table>
+> 🤖 AI 时代啥语言都能处理！
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=javascript,typescript,python,rust,cpp,go,java,php,swift,kotlin" />
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,vue,angular,nodejs,deno,nextjs,tensorflow,pytorch" />
+</p>
 
 ---
 
