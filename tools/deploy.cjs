@@ -134,6 +134,23 @@ function gitBlobSha(buf) {
 
 const human = (n) => (n < 1024 ? `${n} B` : n < 1024 * 1024 ? `${(n / 1024).toFixed(1)} KB` : `${(n / 1048576).toFixed(2)} MB`);
 
+/** GitHub only issues the Let's Encrypt cert once the apex A/AAAA records point at
+ *  it; until then :443 serves the fallback *.github.io cert and this returns
+ *  404 "The certificate does not exist yet". Idempotent — a no-op once enforced. */
+async function enforceHttps() {
+  try {
+    // NOTE: on success this endpoint answers 204 No Content, so there is no body to
+    // read — re-GET the resource to report the resulting state.
+    await api("PUT", `/repos/${SLUG}/pages`, { https_enforced: true });
+    const p = await api("GET", `/repos/${SLUG}/pages`);
+    console.log(`https      : ENFORCED on ${p.html_url}  (https_enforced=${p.https_enforced})`);
+    return true;
+  } catch (e) {
+    console.log(`https      : not yet — ${e.message}`);
+    return false;
+  }
+}
+
 // -------------------------------------------------------------------- main ---
 
 async function main() {
@@ -164,6 +181,13 @@ async function main() {
     const blobs = tree.tree.filter((t) => t.type === "blob");
     console.log(`tree    : ${blobs.length} files, ${human(blobs.reduce((a, t) => a + (t.size || 0), 0))}`);
     for (const t of blobs) console.log(`   ${String(t.size ?? "").padStart(9)}  ${t.path}`);
+    return;
+  }
+
+  if (process.argv.includes("--https") && !push) {
+    // `--https` on its own is just "turn on Enforce HTTPS" — don't also print a
+    // dry-run of the file set, which only matters when pushing.
+    await enforceHttps();
     return;
   }
 
@@ -248,15 +272,8 @@ async function main() {
   }
 
   if (process.argv.includes("--https")) {
-    // GitHub only issues the Let's Encrypt cert once the apex A/AAAA records point
-    // at it; until then :443 serves the fallback *.github.io cert and this returns
-    // 404 "The certificate does not exist yet". Safe to re-run — it is a no-op once
-    // https_enforced is already true.
-    try {
-      const p = await api("PUT", `/repos/${SLUG}/pages`, { https_enforced: true });
-      console.log(`\nhttps      : enforced on ${p.html_url}  (https_enforced=${p.https_enforced})`);
-    } catch (e) {
-      console.log(`\nhttps      : not yet — ${e.message}`);
+    const done = await enforceHttps();
+    if (!done) {
       console.log("             The cert appears once mtoo.vip's apex A/AAAA point at");
       console.log("             185.199.108-111.153 and 2606:50c0:800{0..3}::153.");
       process.exitCode = 2;
