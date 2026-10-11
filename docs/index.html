@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mtoo.vip — 别人笑我太疯癫</title>
+<meta name="description" content="币圈从不收盘，阳台只认节气。主业是币圈的技术支持与服务，副业是把信号从别人的服务器上一路搬回自己的硬盘——机顶盒扔了，广告位不卖，会员墙不建。顺手写了 SrcBox、频道哨兵、HeadplaneCN，全 MIT，全部自托管。">
+<link rel="canonical" href="https://mtoo.vip/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="mtoo.vip">
+<meta property="og:title" content="mtoo.vip — 别人笑我太疯癫">
+<meta property="og:description" content="一个用分钟计，一个用季节计。我在两个刻度之间来回走，不赶任何一边——不卖广告位，不写「该内容仅会员可见」。">
+<meta property="og:url" content="https://mtoo.vip/">
+<meta property="og:image" content="https://mtoo.vip/assets/img/og.png">
+<link rel="stylesheet" href="assets/css/neon.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<nav class="nav">
+  <div class="shell nav-in">
+    <a class="logo" href="index.html"><i class="panel-dot"></i>MTOO.VIP</a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">首页</a>
+      <a href="projects.html">作品</a>
+      <a href="about.html">关于</a>
+      <a href="sponsor.html">赞助</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false"><i></i></button>
+  </div>
+  <div class="nav-drawer" data-open="false">
+    <a href="index.html"><span>01</span>首页</a>
+    <a href="projects.html"><span>02</span>作品</a>
+    <a href="about.html"><span>03</span>关于</a>
+    <a href="sponsor.html"><span>04</span>赞助</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ===================== 000 · BOOT ===================== -->
+<header class="hero">
+  <div class="shell">
+    <div class="hero-bar">
+      <span>SYS <b>MTOO.VIP</b></span>
+      <span>SELF-PORTRAIT <b>001</b></span>
+      <span>UPTIME SINCE <b>2021-11-12</b></span>
+      <span><i class="panel-dot"></i> <span class="ok">STATUS: ONLINE</span></span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="ln" data-reveal-line><span><span class="glitch" data-t="别人笑我太疯癫">别人笑我太疯癫</span></span></span>
+      <span class="ln ln-2" data-reveal-line data-reveal-delay="120"><span><span class="glitch" data-t="我笑他人看不穿">我笑他人看不穿</span></span></span>
+    </h1>
+
+    <p class="hero-sub" data-reveal>
+      币圈从不收盘。阳台只认节气。<br>
+      我在两个刻度之间来回走——一边盯着 7×24 的信号与行情，一边等一盆菜慢慢结果。<br>
+      <em>凌晨三点以后才睡的人，两头都看得见。</em><i class="cur" aria-hidden="true"></i>
+    </p>
+
+    <div class="hero-foot">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="projects.html">进入作品 <span>→</span></a>
+        <a class="btn btn-mg" href="about.html">读关于 <span>→</span></a>
+      </div>
+      <p class="k faint" style="margin:0">两句诗来自唐寅《桃花庵歌》／ 也是我 GitHub 上的签名</p>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-in">
+    <span><b>IPTV</b> · 组播 · 单播 · EPG</span>
+    <span><b>SELF-HOSTED</b> · 自托管 · 家庭服务器</span>
+    <span><b>NO ADS</b> · 无广告 · 无账号墙</span>
+    <span><b>MIT</b> · 全部开源</span>
+    <span><b>WINDOWS</b> · .NET · LIBMPV · WPF</span>
+    <span><b>NODE.JS</b> · FFMPEG · FFProbe</span>
+    <span><b>DOCKER</b> · NAS · FNOS · HEADSCALE</span>
+    <span><b>币圈</b> · 技术支持 · 服务</span>
+    <span><b>7×24</b> · 不收盘 · 凌晨三点还醒着</span>
+    <span><b>茶 · 花 · 菜</b> · 只按节气长</span>
+    <span><b>AI</b> · 一切新东西 · 都要摸一遍</span>
+    <span><b>MTOO.VIP</b> · 一个把机顶盒扔了的人</span>
+  </div>
+</div>
+
+<!-- ===================== 001 · BOOT LOG ===================== -->
+<section class="sec" id="boot">
+  <div class="shell">
+    <div class="sec-h">
+      <span class="sec-n">000</span>
+      <h2 class="sec-t">启动自检</h2>
+      <span class="sec-s">你刚看完的是封面，下面这台机器会自己念一遍</span>
+    </div>
+
+    <div class="term" data-term data-reveal>
+<span class="tl"><span class="p">$</span> whoami</span>
+<span class="tl">一个凌晨三点还醒着的人。<span class="c">币圈是工作，阳台是解药。</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> uname -a</span>
+<span class="tl">MTOO 5.0.1-signal <span class="c">#1 SMP PREEMPT</span> 2021-11-12 x86_64 GNU/自己家</span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> systemctl status 生活</span>
+<span class="tl"><span class="ok">●</span> 生活.service — 一切尽量留在自己手里</span>
+<span class="tl">     Loaded: loaded <span class="c">(/etc/obsession; enabled; preset: enabled)</span></span>
+<span class="tl">     Active: <span class="ok">active (running)</span> <span class="c">since 2021-11-12 01:08:23 CST</span></span>
+<span class="tl">   Main PID: 1 <span class="c">(cgg888)</span></span>
+<span class="tl">      Tasks: <span class="w">1</span> 人 · <span class="w">0</span> 员工 · <span class="w">0</span> 投资人 · <span class="w">0</span> 广告主</span>
+<span class="tl">     CGroup: /obsession.slice</span>
+<span class="tl">             ├─ srcbox.service        <span class="ok">●</span> 正在播放</span>
+<span class="tl">             ├─ sentinel.service      <span class="ok">●</span> <span class="w">783</span> 路信号在线</span>
+<span class="tl">             ├─ headplane.service     <span class="ok">●</span> headscale 正常</span>
+<span class="tl">             ├─ 币圈.service          <span class="warn">◐</span> 波动中，正常</span>
+<span class="tl">             ├─ 搬家.service          <span class="warn">◐</span> 进度 61%，还在搬</span>
+<span class="tl">             ├─ 浇水.timer            <span class="ok">●</span> 每早 06:00</span>
+<span class="tl">             └─ 睡觉.timer            <span class="err">○</span> 超时，已放弃重启</span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> cat /etc/obsession</span>
+<span class="tl"><span class="ok">[ ok ]</span> 挂载 /dev/signal              <span class="c">—— 信号归自己</span></span>
+<span class="tl"><span class="ok">[ ok ]</span> 卸载 ad-service               <span class="c">—— 广告模块：未找到</span></span>
+<span class="tl"><span class="err">[ !! ]</span> 拒绝 membership-wall          <span class="c">—— 拒绝理由：这不是技术问题</span></span>
+<span class="tl"><span class="err">[ !! ]</span> 丢弃 tracking-pixel           <span class="c">—— 收件人不详，已就地销毁</span></span>
+<span class="tl"><span class="ok">[ ok ]</span> 停用 hype-engine               <span class="c">—— 不追叙事，只研究技术</span></span>
+<span class="tl"><span class="warn">[warn]</span> 检测到 <span class="w">108</span> 个公开仓库，其中 <span class="w">4</span> 个挂在门口</span>
+<span class="tl"><span class="ok">[ ok ]</span> 数据留在本机                  <span class="c">—— 没有例外，没有「为了改善体验」</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> cat ~/阳台/清单</span>
+<span class="tl">茶    <span class="c">一壶，每天两次。手机放远一点。</span></span>
+<span class="tl">花    <span class="c">活着就行，不要求它开爆。</span></span>
+<span class="tl">菜    <span class="c">今年第三茬，比第二茬好一点。</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> ls -la ~/凌晨三点</span>
+<span class="tl"><span class="c">-rw-r--r--  1 cgg888 0 03:07</span> <span class="w">黑屏</span></span>
+<span class="tl"><span class="c">-rw-r--r--  1 cgg888 0 03:11</span> <span class="w">重连</span></span>
+<span class="tl"><span class="c">-rw-r--r--  1 cgg888 0 03:12</span> <span class="ok">绿了</span></span>
+<span class="tl"><span class="c">drwxr-xr-x  2 cgg888 - 03:40</span> <span class="w">睡不着</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> uptime</span>
+<span class="tl">2021-11-12 起，<span class="w">没有停过</span>。没有宕机，没有假期，也没有人给我发工资。</span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> curl -s https://mtoo.vip/health</span>
+<span class="tl">{"ads":<span class="gr">0</span>,"trackers":<span class="gr">0</span>,"members_only":<span class="gr">0</span>,"sold":<span class="gr">0</span>,"hype":<span class="gr">0</span>,"uptime":"<span class="w">forever</span>"}</span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> ./read-the-rest.sh <span class="c">──────────────────►</span> <span class="term-cur" aria-hidden="true">▮</span></span>
+    </div>
+
+    <div class="split" style="margin-top:clamp(28px,3.4vw,64px)">
+      <p class="lead" data-reveal>如果一定要一句话说完：<br><em>我在给一条信号做减法——减到中间没有人能收钱。</em></p>
+      <div class="body" data-reveal>
+        <p>我从一台机顶盒开始。它开机要放三十秒广告，想看的频道被排在第三页，回看永远转不出画面。我问过我妈这正常吗，她说正常，免费的都这样。<b>从那天起我就不想要这种正常。</b></p>
+        <p>免费的东西从来没有免费过，账单只是换了个地方寄——寄到你的时间上，寄到你的注意力上，寄到你每次点开之前那半秒的犹豫上。<b>我不想再替别人付这笔账。</b></p>
+        <p>搬到今天，家里多了一台一直亮着的机器、几个一直在跑的服务、一份越来越长的 <span class="cy">/etc/obsession</span>。它们都不大，也不新，<b>但每一行都归我——没有一行是租来的。</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 002 · SYMPTOMS ===================== -->
+<section class="sec" id="symptoms">
+  <div class="shell">
+    <div class="sec-h">
+      <span class="sec-n">001</span>
+      <h2 class="sec-t">症状</h2>
+      <span class="sec-s">与其写简历，不如写病历</span>
+    </div>
+
+    <div class="decl">
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">01</div>
+        <h3 class="decl-t">我的时间<br>有两套刻度</h3>
+        <div class="decl-d">
+          我靠币圈的技术支持与服务吃饭。那是个 7×24 不收盘的地方：新叙事、新协议、新名词，一天能换三茬，凌晨三点照样有人在喊。<br><br>
+          回家以后我干的事完全相反——泡一壶茶，看一眼花，给菜浇水。一棵菜不会因为我说了什么就长得快一点，<b>这种诚实我很需要。</b>
+        </div>
+      </article>
+
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">02</div>
+        <h3 class="decl-t">凌晨三点，<br>我本来就没睡</h3>
+        <div class="decl-d">
+          「别人笑我太疯癫」这句话我很早就接受了，但我不接受「疯癫」这个词。我只是个夜猫子——凌晨三点通常还醒着，顺手打开一个自己写的网页，看一眼那路只有 240p 的央视还在不在。
+          <br><br><b>它是绿的。然后我才去睡。</b>
+        </div>
+      </article>
+
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">03</div>
+        <h3 class="decl-t">对「会员可见」<br>的生理性反感</h3>
+        <div class="decl-d">
+          把一件简单的事做成一个需要登录的行业，是一种选择，不是一种必然。三十秒不可跳过的广告、只对会员开放的内容、为了看一个公开频道先证明我是谁——<b>每一条都是有人坐在会议室里决定这么干的。</b><br><br>
+          <b>这不是技术的极限，是设计的懒惰；更准确地说，是商业模式在替你做决定。</b>
+        </div>
+      </article>
+
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">04</div>
+        <h3 class="decl-t">不追新，<br>但一定要研究新</h3>
+        <div class="decl-d">
+          我不追热点。热点的意思是：所有人都在说，但没人说得清它到底解决了什么问题。AI、新协议、新硬件、一堆别人看不懂的工具，我全都要自己上手摸一遍——摸完再决定它值不值得我花时间。<br><br>
+          <b>随波逐流的人不需要理解，只需要跟上。我不想要那种轻松。</b>
+        </div>
+      </article>
+
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">05</div>
+        <h3 class="decl-t">重复第三遍<br>就想写成工具</h3>
+        <div class="decl-d">
+          同一件事我做第三遍就烦，然后把它写成脚本；脚本用到第十次，我给它加个界面；界面被我自己嫌弃之后，我重写一遍。<br><br>
+          副作用是：<b>我经常需要再写一个工具，来管理上一个工具。</b>
+        </div>
+      </article>
+
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">06</div>
+        <h3 class="decl-t">不肯外包的偏执</h3>
+        <div class="decl-d">
+          我不太信任「云端」。不是因为安全，是因为它会消失。我今天付得起，明天不一定；这家公司今天在，明天不一定。<b>把生活架在别人的资产负债表上，是一种很奇怪的乐观。</b><br><br>
+          <b>所以东西一律放在自己能碰到的地方</b>——硬盘、局域网、自己的域名、自己的账单。
+        </div>
+      </article>
+
+      <article class="decl-row" data-reveal>
+        <div class="decl-n">07</div>
+        <h3 class="decl-t">说不清的动机</h3>
+        <div class="decl-d">
+          有人问我图什么。门口这四件东西，没有收入，没有流量，没有人要求我做，也没有人拦着我。<br><br>
+          如果非要一个理由：<b>我想让那条信号多亮一会儿</b>——先亮在我自己的屏幕上。别的都是副产品。
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MANIFESTO · full bleed ===================== -->
+<section class="mani-band" data-t="CLOCKS" aria-label="一段排印宣言">
+  <div class="shell">
+    <p class="mani mani-1" data-reveal>币圈从不收盘。</p>
+    <p class="mani mani-2" data-reveal>阳台只认节气。</p>
+    <p class="mani mani-3" data-reveal>一个用分钟计，一个用季节计。</p>
+    <p class="mani mani-4" data-reveal>我在两个刻度之间来回走，<span class="hot">不赶任何一边</span>。</p>
+    <p class="mani mani-5" data-reveal>只有一件事不变：<span class="cy">自己跑得起来才算数</span>。</p>
+  </div>
+</section>
+
+<!-- ===================== 003 · PRESCRIPTION ===================== -->
+<section class="sec" id="prescription">
+  <div class="shell">
+    <div class="sec-h">
+      <span class="sec-n">002</span>
+      <h2 class="sec-t">处方</h2>
+      <span class="sec-s">于是我把这些症状，翻译成了几个软件</span>
+    </div>
+    <div class="split split-57">
+      <div>
+        <p class="lead" data-reveal>我做的东西只有一条主线：<br><em>让一条信号从源头到屏幕，中间不要有陌生人。</em></p>
+        <div class="body" data-reveal>
+          <p>主业那摊事在另一个地方，写在网页上没有意义。<b>这里的东西全部来自凌晨那三个小时：那个不肯把遥控器交出去的人。</b></p>
+          <p>顺着这条线长出来的东西很有限：一个 Windows 上的播放器，一个检测信号的哨兵，一个被我改到适合中国人用的播放器分支，一个被我翻译并顺手修好的自托管面板分支。<b>少，是因为多没有意义。</b></p>
+          <p>它们都不大，也不新，但都每天在我自己家里跑着。<span class="cy">这就是我对一件工具唯一的验收标准：它得先被我自己用上。</span>用不上的，不发布。</p>
+          <p>所以这里没有路线图，没有融资，没有「即将上线」，也没有一封等着回音的邮件。只有正在用的，和还没弄好的。</p>
+        </div>
+      </div>
+      <div class="term" data-term data-reveal>
+<span class="tl"><span class="p">$</span> ls -1 ~/工作</span>
+<span class="tl"><span class="c">（币圈的技术支持与服务。这部分不放在网页上——</span></span>
+<span class="tl"><span class="c"> 工作和作品分开，是我给自己定的规矩。）</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> ls -1 ~/projects</span>
+<span class="tl"><span class="w">SrcBox/</span>            <span class="c">Windows 上的 IPTV 播放器</span></span>
+<span class="tl"><span class="w">channel-sentinel/</span>   <span class="c">批量检测每一路信号</span></span>
+<span class="tl"><span class="w">iptvnator/</span>          <span class="c">跨平台播放器，我在改它</span></span>
+<span class="tl"><span class="w">headplaneCN/</span>        <span class="c">自托管面板的中文分支</span></span>
+<span class="tl"><span class="c">共 4 项 —— 门口只挂这些，剩下的躺在角落里等我想起来</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> git log --oneline -5</span>
+<span class="tl"><span class="yl">a91f3c2</span> 又是一次凌晨的提交</span>
+<span class="tl"><span class="yl">7e0d118</span> 把那个奇怪的边界情况修了</span>
+<span class="tl"><span class="yl">3bb90a4</span> 先写脚本，再写界面</span>
+<span class="tl"><span class="yl">e5510af</span> 删掉三个我自己都不用的设置项</span>
+<span class="tl"><span class="yl">1c02d7b</span> 补注释，免得三个月后看不懂</span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> echo $LICENSE</span>
+<span class="tl"><span class="gr">MIT</span> <span class="c">—— 一直都会是 MIT</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> ./next.sh <span class="c">────────────────►</span> <span class="term-cur" aria-hidden="true">▮</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 004 · TELEMETRY ===================== -->
+<section class="sec" id="telemetry">
+  <div class="shell">
+    <div class="sec-h">
+      <span class="sec-n">003</span>
+      <h2 class="sec-t">读数</h2>
+      <span class="sec-s">都是真的数字，没有一个是编的</span>
+    </div>
+    <div class="hud" data-reveal>
+      <div class="hud-cell">
+        <div class="hud-n n">108</div>
+        <div class="hud-l">Public repos</div>
+        <p class="hud-d">公开仓库总数。挂在门口的只有四个，剩下的躺在角落里等我想起来。币圈那边的工作不进这个计数——<b>数量不是成就。</b></p>
+      </div>
+      <div class="hud-cell">
+        <div class="hud-n n">132<small>★</small></div>
+        <div class="hud-l">Top signal</div>
+        <p class="hud-d">最亮的那颗星在 SrcBox 上。有人在真的用它，而且没人为它付过一分钱——<b>这件事到现在还让我有点意外。</b></p>
+      </div>
+      <div class="hud-cell">
+        <div class="hud-n n">04</div>
+        <div class="hud-l">Pinned</div>
+        <p class="hud-d">置顶只有四个。<b>门口挂满东西的人，通常没有一件是天天在用的。</b></p>
+      </div>
+      <div class="hud-cell">
+        <div class="hud-n n">00</div>
+        <div class="hud-l">Ads served</div>
+        <p class="hud-d">广告。从第一天到现在，一个都没有。<b>以后也不会有——这一条不谈判。</b></p>
+      </div>
+      <div class="hud-cell">
+        <div class="hud-n n">2021</div>
+        <div class="hud-l">Since</div>
+        <p class="hud-d">11 月 12 日。那天我的 GitHub 上一个仓库都没有。剩下那一百零八个，都是从那一天之后长出来的。</p>
+      </div>
+    </div>
+    <p class="k faint" style="margin-top:18px" id="data-stamp" data-reveal></p>
+  </div>
+</section>
+
+<!-- ===================== 005 · PINNED ===================== -->
+<section class="sec" id="pinned-section">
+  <div class="shell">
+    <div class="sec-h">
+      <span class="sec-n">004</span>
+      <h2 class="sec-t">门口的四件东西</h2>
+      <span class="sec-s">GitHub 上的置顶，一件不多。少不是谦虚，是筛过</span>
+    </div>
+    <div class="pins" id="pinned" data-detail="compact" data-layout="loadout" data-reveal></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(20px,2.4vw,36px)">
+      <a class="btn" href="projects.html">看完整作品页 <span>→</span></a>
+      <a class="btn btn-mg" href="https://github.com/CGG888" target="_blank" rel="noopener">全部仓库在 GitHub <span>↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 006 · OPEN ===================== -->
+<section class="sec" id="open">
+  <div class="shell">
+    <div class="sec-h">
+      <span class="sec-n">005</span>
+      <h2 class="sec-t">还没治好的部分</h2>
+      <span class="sec-s">一个诚实的待办</span>
+    </div>
+    <ul class="steps" data-reveal>
+      <li><span class="y" style="color:var(--yl)">OPEN</span><span class="e">把 SrcBox 做成一个不需要说明书的东西。现在它需要一份说明书，而我不喜欢写说明书，也不喜欢读别人写的。</span></li>
+      <li><span class="y" style="color:var(--yl)">OPEN</span><span class="e">让每一路信号都能被看见、被记录、被回溯。断流的时候我得立刻知道是它的问题还是我的问题——<b>靠猜，是业余的。</b></span></li>
+      <li><span class="y" style="color:var(--yl)">OPEN</span><span class="e">把「搬回自己家」这件事做完——代码托管、内网穿透、媒体库、监控。做了一半，一半很有意思。</span></li>
+      <li><span class="y" style="color:var(--yl)">OPEN</span><span class="e">把阳台也接进来——自动浇水、光照记录、一株菜从种子到上桌的完整日志。<b>一棵菜和一路信号，本质上是同一个问题：都得自己盯着。</b></span></li>
+      <li><span class="y" style="color:var(--yl)">OPEN</span><span class="e">学会在写完一个工具之后停下来。前面这些都在往前走，只有这一条永远没有进度。</span></li>
+      <li><span class="y" style="color:var(--gr)">DONE</span><span class="e">看一场直播之前，不用再看三十秒广告。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 007 · OUTRO ===================== -->
+<section class="sec" id="outro">
+  <div class="shell">
+    <div class="split">
+      <div>
+        <div class="pull" data-reveal>
+          别人笑我太疯癫，<br>我笑他人看不穿。
+          <p class="k faint" style="margin-top:16px">唐寅 ·《桃花庵歌》／ 也是我 GitHub 上的签名</p>
+        </div>
+        <p class="lead" data-reveal>如果你也在折腾 IPTV、组播、自托管，<br>或者你也在币圈、凌晨三点也还醒着，阳台上也摆着几盆东西，<br>又或者你只是受够了那句「该内容仅会员可见」——<br>我们大概聊得来。</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+          <a class="btn" href="about.html">读关于 <span>→</span></a>
+          <a class="btn btn-mg" href="sponsor.html">请我喝杯咖啡 <span>→</span></a>
+        </div>
+      </div>
+      <div class="panel panel-tick" data-reveal>
+        <p class="k">NOTE / 关于钱</p>
+        <p class="body" style="margin-top:14px">
+          这个站没有广告、没有会员、没有付费版、没有统计脚本。所有代码一直是 MIT。想给钱的话，赞助页上有两张收款码——<span class="cy">不给，也一样能用一辈子，而且我不会因此少写一行代码。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-word">MTOO.VIP</div>
+        <p class="body" style="font-size:12.5px;margin-top:12px;max-width:44ch">
+          主业是币圈的技术支持与服务，副业是把 IPTV、流媒体和自托管工具一件件搬回自己家。喝茶、养花、种点菜，顺手研究一切新东西。数据留在我自己手里——也留在你自己手里。
+        </p>
+      </div>
+      <div>
+        <h4 class="k">目录</h4>
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="projects.html">作品</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="sponsor.html">赞助</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="k">别处</h4>
+        <ul>
+          <li><a href="https://github.com/CGG888" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://srcbox.top" target="_blank" rel="noopener">SrcBox 官网 ↗</a></li>
+          <li><a href="mailto:cgg@mtoo.vip">cgg@mtoo.vip</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="k">许可</h4>
+        <ul>
+          <li><span>代码 MIT</span></li>
+          <li><span>无广告 · 无追踪</span></li>
+          <li><span>不设会员</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> MTOO.VIP — 保留所有权利</span>
+      <span>别人笑我太疯癫 · 我笑他人看不穿</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/projects.js"></script>
+</body>
+</html>

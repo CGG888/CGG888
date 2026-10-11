@@ -1,0 +1,18 @@
+# --- local preview & capture artefacts -----------------------------------
+# GitHub Pages publishes /docs only, so these never reach the live site.
+# They are still kept out of git so the repo stays readable.
+# `_`-prefixed names under tools/ are by convention scratch (deploy.cjs skips
+# them too, so a stray one can never slip into a published commit).
+tools/_shots/
+tools/_probe/
+tools/_pull/
+tools/_*.cjs
+tools/_*.png
+docs/_*.html
+
+# --- scratch from the data pipeline --------------------------------------
+tools/gh-raw.json
+
+# --- python bytecode ------------------------------------------------------
+__pycache__/
+*.pyc

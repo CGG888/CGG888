@@ -1,98 +1,107 @@
-# 👋 Hello, I'm CGG888
+<div align="center">
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=WELCOME+TO+MY+PROFILE" alt="Typing SVG" />
-</p>
+# CGG888
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="60" height="60"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="60" height="60"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="60" height="60"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg" width="60" height="60"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" width="60" height="60"/>
-</p>
+### 币圈从不收盘。阳台只认节气。
 
-<p align="center">
-  <a href="https://github.com/CGG888"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="mailto:your.email@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://twitter.com/yourhandle"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/yourhandle"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-</p>
+主业是币圈的 **技术支持与服务**，副业是把 IPTV、流媒体和自托管工具一件件搬回自己家。<br>
+喝茶、养花、种点菜，顺手把一切新东西拆开看一遍。
+
+不接广告 · 不做会员 · 不写「该内容仅会员可见」 · 全部 **MIT**
+
+[**mtoo.vip**](https://mtoo.vip) &nbsp;·&nbsp; [作品](https://mtoo.vip/projects) &nbsp;·&nbsp; [关于](https://mtoo.vip/about) &nbsp;·&nbsp; [赞助](https://mtoo.vip/sponsor)
+
+</div>
 
 ---
 
-## 🎯 About Me
+## 门口只挂四件东西
 
-```javascript
-const coder = {
-  name: "CGG888",
-  hobbies: ["编程", "AI", "开源", "新技术探索"],
-  currentFocus: "AI & 全栈开发",
-  motto: "代码改变世界 🚀",
-  coffee: true,
-  sleep: false
-};
-```
+> 其余一百多个仓库是 fork、试验和没想明白的东西，算不上作品。
+> 少不是谦虚，是筛过。
 
-| 项目 | 描述 |
-|------|------|
-| 🔭 当前工作 | 正在开发 ... |
-| 🌱 学习方向 | AI / Machine Learning / 全栈 |
-| 💼 合作意向 | 开源项目 / 创新产品 |
-| ⚡ 超能力 | 咖啡 → 代码转化器 ☕→💻 |
+<table>
+<tr>
+<td width="50%" valign="top">
 
----
+### [SrcBox](https://github.com/CGG888/SrcBox)
 
-## 🛠️ Tech Stack
+Windows 上的 IPTV 播放器。底层 libmpv，外壳 WPF，目标是让电脑接上电视就能看。
 
-> 🤖 AI 时代啥语言都能处理！
+`C#` `WPF` `libmpv` `.NET 8`
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=javascript,typescript,python,rust,cpp,go,java,php,swift,kotlin" />
-</p>
+![stars](https://img.shields.io/github/stars/CGG888/SrcBox?style=flat-square&color=00b3b3&label=%E2%98%85)
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,vue,angular,nodejs,deno,nextjs,tensorflow,pytorch" />
-</p>
+</td>
+<td width="50%" valign="top">
 
-**DevOps & Tools**
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=git,docker,kubernetes,aws,gcp,linux,vim,vscode" />
-</p>
+### [channel-sentinel](https://github.com/CGG888/channel-sentinel)
 
----
+IPTV 组播 / 单播流的批量检测与管理。让每一路信号都能被看见、被记录、被回溯。
 
-## 💬 Random Dev Joke
+`Node.js` `Express` `ffprobe`
 
-<p align="center">
-  <img src="https://readme-jokes.vercel.app/api?bgColor=%231e1e2e&textColor=%23cdd6f4&logoColor=%239f7aea&aColor=%23f38ba8&eColor=%23a6e3a1" alt="Joke Card" />
-</p>
+![stars](https://img.shields.io/github/stars/CGG888/channel-sentinel?style=flat-square&color=00b3b3&label=%E2%98%85)
 
----
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-## 📫 How to reach me
+### [iptvnator](https://github.com/CGG888/iptvnator)
 
-<p align="center">
-  <a href="https://github.com/CGG888"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="mailto:your.email@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://twitter.com/yourhandle"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/yourhandle"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-</p>
+跨平台 IPTV 播放器。我把上游改得更适合中国大陆这边的源。
+
+`TypeScript` `Electron`
+
+![stars](https://img.shields.io/github/stars/CGG888/iptvnator?style=flat-square&color=00b3b3&label=%E2%98%85)
+
+</td>
+<td width="50%" valign="top">
+
+### [HeadplaneCN](https://github.com/CGG888/headplaneCN)
+
+Headplane 的中文分支。面向自托管 NAS 调优，尤其是飞牛 fnOS 这类部署。
+
+`TypeScript` `React` `Headscale`
+
+![stars](https://img.shields.io/github/stars/CGG888/headplaneCN?style=flat-square&color=00b3b3&label=%E2%98%85)
+
+</td>
+</tr>
+</table>
 
 ---
 
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Quote" />
-</p>
+## 我信什么
 
-<p align="center">
-  <img src="https://visitor-badge.laoleng- Workers.dev/badge?user=CGG888&id=1&a=1" alt="Visitor Badge" />
-</p>
+| | |
+|---|---|
+| **一** | 数据应该待在自己的硬盘上 |
+| **二** | 工具应该在断网的那一刻还活着 |
+| **三** | 每个功能都要能回答「为什么」 |
+| **四** | 工具不要求你注册账号 |
+| **五** | 新的东西，必须自己摸一遍 |
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Thank%20You-❤️-red?style=for-the-badge" />
-</p>
+> 如果一个工具在断网的那一刻就死了，那它其实不属于你。
 
 ---
 
-⭐ Generated with [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) | [github-readme-streak-stats](https://github.com/denvercoder1/github-readme-streak-stats) | [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy)
+## 现在在做什么
+
+- 把 **SrcBox** 做成一个不需要说明书的东西
+- 让每一路信号都能被看见、被记录、被回溯
+- 把「搬回自己家」做成一套能复用的东西：反代、内网穿透、媒体库、监控
+- 把阳台也接进来：自动浇水、光照记录、一株菜从种子到上桌的完整日志
+
+一棵菜和一路信号，本质上是同一个问题：**都得自己盯着。**
+
+---
+
+<div align="center">
+
+**联系** &nbsp;·&nbsp; [cgg@mtoo.vip](mailto:cgg@mtoo.vip) &nbsp;·&nbsp; [srcbox.top](https://srcbox.top) &nbsp;·&nbsp; [mtoo.vip](https://mtoo.vip)
+
+<sub>一个人的站。做 IPTV、流媒体与自托管工具。数据留在自己手里。</sub>
+
+</div>

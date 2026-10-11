@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 — 信号丢失 · mtoo.vip</title>
+<meta name="description" content="这个地址上没有东西。可能是我改了链接，也可能是信号在这一段就断了——总之这里没有你要的信号。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="stylesheet" href="assets/css/neon.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="shell nav-in">
+    <a class="logo" href="index.html"><i class="panel-dot"></i>MTOO.VIP</a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="projects.html">作品</a>
+      <a href="about.html">关于</a>
+      <a href="sponsor.html">赞助</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false"><i></i></button>
+  </div>
+  <div class="nav-drawer" data-open="false">
+    <a href="index.html"><span>01</span>首页</a>
+    <a href="projects.html"><span>02</span>作品</a>
+    <a href="about.html"><span>03</span>关于</a>
+    <a href="sponsor.html"><span>04</span>赞助</a>
+  </div>
+</nav>
+
+<main id="main" class="shell">
+  <div class="nf">
+    <p class="crumb"><b>ERROR</b><span>/</span><span>NO SIGNAL</span><span>/</span><span>HTTP 404</span></p>
+    <h1 class="glitch" data-t="404">404</h1>
+    <p class="lead" style="max-width:56ch">
+      这个地址是空的。<br>
+      可能是我改了链接没告诉你，也可能是信号在这一段就断了。<br>
+      ——反正它不在这儿。
+    </p>
+    <div class="term" data-term style="max-width:64ch">
+<span class="tl"><span class="p">$</span> probe --target <span class="w" id="missing">?</span></span>
+<span class="tl"><span class="err">[ !! ]</span> 该路径上没有可播放的流</span>
+<span class="tl"><span class="c">—— 检查一下地址，或者从下面这几条路回去。</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> systemctl status 这个地址</span>
+<span class="tl"><span class="err">[ fail ]</span> Unit 这个地址.service could not be found.</span>
+<span class="tl"><span class="c">—— 我这边 7×24 都开着，丢的大概只是这一个链接。</span></span>
+<span class="tl"> </span>
+<span class="tl"><span class="p">$</span> <span class="term-cur" aria-hidden="true">▮</span></span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="index.html">回首页 <span>→</span></a>
+      <a class="btn btn-mg" href="projects.html">看作品 <span>→</span></a>
+      <a class="btn" href="about.html">读关于 <span>→</span></a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-bottom" style="border-top:0">
+      <span>© <span data-year>2026</span> MTOO.VIP</span>
+      <span>404 · 别人笑我太疯癫</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* show the path that failed — client side only, so the page stays a static file */
+(function () {
+  var el = document.getElementById("missing");
+  if (el) el.textContent = decodeURIComponent(location.pathname);
+})();
+</script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
