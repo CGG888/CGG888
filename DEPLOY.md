@@ -97,8 +97,19 @@ token 依次取 `$GH_TOKEN` → `~/.git-credentials` 里的 github.com 条目（
 
 ## 5. DNS（阿里云万网，`dns1/dns2.hichina.com`）
 
-**删掉**现有的 `mtoo.vip → 183.7.146.149` 与 `www → 119.128.128.41`（家宽 80/443 被运营商封，
-海外节点实测三个全超时，留着会连到打不开的机器上）。
+**实测状态（2026-10-11）：**
+
+| 记录 | 现状 | 还要不要动 |
+|---|---|---|
+| `www` → CNAME `cgg888.github.io` | ✅ **已经生效** | 不用动 |
+| `mtoo.vip` → A `183.7.146.149` | ❌ 还指着家宽路由器 | **只剩这一条要改** |
+| `MX` → `mxn/mxw.mxhichina.com`、`git` 的 CNAME、TXT | 原样 | **不要动** |
+
+`www` 那条已经验证过了：`http://www.mtoo.vip/` 返回 `301 → http://mtoo.vip/`，
+这个跳转就是 GitHub Pages 认出了这个自定义域名。所以**只差 apex 那 8 条**。
+
+**把现有的 `mtoo.vip → 183.7.146.149` 删掉**（家宽 80/443 被运营商封，海外节点实测三个全超时，
+留着会连到打不开的机器上），换成：
 
 | 主机记录 | 类型 | 记录值 |
 |---|---|---|
@@ -110,9 +121,18 @@ token 依次取 `$GH_TOKEN` → `~/.git-credentials` 里的 github.com 条目（
 | `@` | AAAA | `2606:50c0:8001::153` |
 | `@` | AAAA | `2606:50c0:8002::153` |
 | `@` | AAAA | `2606:50c0:8003::153` |
-| `www` | CNAME | `cgg888.github.io` |
 
-邮件相关记录（`MX` → `mxn/mxw.mxhichina.com`、`git` 的 CNAME、TXT）**不要动**。
+**改完之后：** 等解析生效（几分钟到半小时），GitHub 才会去签 TLS 证书。
+证书签发完成之前 `https://mtoo.vip` 会报证书错误，这是正常的。
+
+证书就绪后再开强制 HTTPS：
+
+```bash
+node -e "…"   # 或直接在仓库 Settings → Pages 勾 Enforce HTTPS
+```
+
+用 API 的话是 `PUT /repos/CGG888/CGG888/pages` + `{"https_enforced":true}`。
+现在调它会返回 `404 The certificate does not exist yet` —— 这正是「DNS 还没指过来」的证据。
 
 ## 6. 联系邮箱
 

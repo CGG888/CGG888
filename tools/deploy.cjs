@@ -135,7 +135,33 @@ const human = (n) => (n < 1024 ? `${n} B` : n < 1024 * 1024 ? `${(n / 1024).toFi
 async function main() {
   const push = process.argv.includes("--push");
   const enablePages = process.argv.includes("--pages");
+  const statusOnly = process.argv.includes("--status");
   TOKEN = token();
+
+  if (statusOnly) {
+    const repo = await api("GET", `/repos/${SLUG}`);
+    const ref = await api("GET", `/repos/${SLUG}/git/ref/heads/${BRANCH}`);
+    const commit = await api("GET", `/repos/${SLUG}/git/commits/${ref.object.sha}`);
+    console.log(`repo    : ${repo.full_name}  private=${repo.private}`);
+    console.log(`main    : ${ref.object.sha.slice(0, 10)}  "${commit.message.split("\n")[0]}"  ${commit.committer.date}`);
+    try {
+      const p = await api("GET", `/repos/${SLUG}/pages`);
+      console.log(`pages   : ${p.html_url}  status=${p.status}  cname=${p.cname}`);
+      console.log(`          https_enforced=${p.https_enforced}  source=${p.source && p.source.branch}${p.source && p.source.path}`);
+      try {
+        const b = await api("GET", `/repos/${SLUG}/pages/builds/latest`);
+        console.log(`build   : ${b.status}${b.error ? ` — ${b.error.message}` : ""}  ${b.duration ? b.duration + "ms" : ""}`);
+        console.log(`          ${b.commit}`);
+      } catch { console.log("build   : (none yet)"); }
+    } catch {
+      console.log("pages   : NOT enabled");
+    }
+    const tree = await api("GET", `/repos/${SLUG}/git/trees/${ref.object.sha}?recursive=1`);
+    const blobs = tree.tree.filter((t) => t.type === "blob");
+    console.log(`tree    : ${blobs.length} files, ${human(blobs.reduce((a, t) => a + (t.size || 0), 0))}`);
+    for (const t of blobs) console.log(`   ${String(t.size ?? "").padStart(9)}  ${t.path}`);
+    return;
+  }
 
   const who = await api("GET", "/user");
   const repo = await api("GET", `/repos/${SLUG}`);
