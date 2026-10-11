@@ -25,6 +25,10 @@
  *   node tools/deploy.cjs                # dry run: show what would change
  *   node tools/deploy.cjs --push         # create the commit and move main
  *   node tools/deploy.cjs --push --pages # …and enable Pages (main /docs)
+ *   node tools/deploy.cjs --https        # turn on Enforce HTTPS (after the cert exists)
+ *   node tools/deploy.cjs --status       # repo / branch / Pages / build / tree
+ *
+ *   node tools/verify-live.cjs           # diff the live site against docs/ byte-for-byte
  *
  * TOKEN
  *   $GH_TOKEN, else the github.com entry in ~/.git-credentials.
@@ -240,6 +244,22 @@ async function main() {
       });
       console.log(`\npages      : enabled — ${pages.html_url}`);
       console.log(`             source ${BRANCH}${PAGES_PATH}`);
+    }
+  }
+
+  if (process.argv.includes("--https")) {
+    // GitHub only issues the Let's Encrypt cert once the apex A/AAAA records point
+    // at it; until then :443 serves the fallback *.github.io cert and this returns
+    // 404 "The certificate does not exist yet". Safe to re-run — it is a no-op once
+    // https_enforced is already true.
+    try {
+      const p = await api("PUT", `/repos/${SLUG}/pages`, { https_enforced: true });
+      console.log(`\nhttps      : enforced on ${p.html_url}  (https_enforced=${p.https_enforced})`);
+    } catch (e) {
+      console.log(`\nhttps      : not yet — ${e.message}`);
+      console.log("             The cert appears once mtoo.vip's apex A/AAAA point at");
+      console.log("             185.199.108-111.153 and 2606:50c0:800{0..3}::153.");
+      process.exitCode = 2;
     }
   }
 }
