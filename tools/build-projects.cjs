@@ -2,7 +2,7 @@
    build-projects.cjs — regenerate docs/assets/data/projects.json
 
    Only the PINNED repositories go in. The curated block below is the source of
-   truth for which four they are and for everything a machine cannot know
+   truth for which two they are and for everything a machine cannot know
    (中文名, which screenshot belongs to which repo, what the highlights are).
    Stars / forks / topics / last push are pulled live, in this order:
 
@@ -26,7 +26,7 @@ const OUT = path.join(ROOT, "docs", "assets", "data", "projects.json");
 const CACHE = path.join(ROOT, "tools", "stars-cache.json");
 const USER = "CGG888";
 
-/* ---------- curated: the four pinned repos, and only those ---------- */
+/* ---------- curated: the pinned repos, and only those ---------- */
 const PINNED = [
   {
     name: "SrcBox",
@@ -69,36 +69,6 @@ const PINNED = [
       "Docker 镜像 cgg888/channel-sentinel",
     ],
   },
-  {
-    name: "iptvnator",
-    cn: "跨平台播放器",
-    kind: "fork",
-    homepage: "",
-    cover: "",
-    gallery: [],
-    note: "别人的项目（上游 4gray/iptvnator）。我把它改得更适合中国大陆这边的源。",
-    points: [
-      "适配中国大陆常见的 IPTV 使用场景",
-      "m3u / m3u8 播放列表的播放与管理",
-      "跨平台客户端",
-    ],
-  },
-  {
-    name: "headplaneCN",
-    cn: "Headplane 中文分支",
-    kind: "fork",
-    homepage: "https://cgg888.github.io/headplaneCN/",
-    cover: "assets/img/projects/headplane-01.webp",
-    gallery: ["assets/img/projects/headplane-02.webp"],
-    note: "上游 Headplane 的分支：补上中文，并针对自托管 NAS 调优。",
-    points: [
-      "三语界面（中 / 英 / 日）",
-      "DERP 地图在线编辑、中继地址自动同步",
-      "告警通知、配置快照与操作审计",
-      "面向飞牛 fnOS 这类「headscale 跑原生进程、面板跑 Docker」的部署",
-      "Docker 镜像 ghcr.io/cgg888/headplanecn",
-    ],
-  },
 ];
 
 /* ---------- live sources ---------- */
@@ -137,7 +107,7 @@ async function viaGraphQL() {
           name description url homepageUrl stargazerCount forkCount isFork pushedAt
           primaryLanguage { name }
           repositoryTopics(first: 10) { nodes { topic { name } } }
-          releases(last: 1) { nodes { tagName publishedAt } }
+          releases(first: 10) { nodes { tagName publishedAt isDraft isPrerelease } }
         } }
       }
     }
@@ -256,7 +226,14 @@ function readJson(p) {
         topics: (n.repositoryTopics.nodes || []).map(function (t) {
           return t.topic.name;
         }),
-        release: (n.releases.nodes[0] || {}).tagName || "",
+        /* `last: 1` used to hand back the OLDEST release, because GitHub orders
+           the connection newest-first and `last` takes the tail — the site spent
+           months advertising SrcBox v1.0.1 while v1.1.18 was out. Ask for the
+           newest page and drop drafts/prereleases (SrcBox ships prerelease
+           `voice-pack-*` tags that must never become the headline version). */
+        release: ((n.releases.nodes || []).filter(function (r) {
+          return r && !r.isDraft && !r.isPrerelease;
+        })[0] || {}).tagName || "",
         pushedAt: (n.pushedAt || "").slice(0, 10),
       };
     });

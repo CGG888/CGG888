@@ -88,6 +88,16 @@ function collect() {
   return [...new Set(out)].sort();
 }
 
+/** Is this remote path one that collect() owns? Mirrors collect()'s scope exactly,
+ *  so a genuine local deletion can be propagated without ever touching a file this
+ *  tool does not own — most importantly CGG888_PROFILE.md, which shares the repo. */
+function managed(rel) {
+  if (SKIP.some((re) => re.test(rel))) return false;
+  if (ROOT_FILES.includes(rel)) return true;
+  if (rel.startsWith("docs/")) return true;
+  return TOOLS_RE.test(rel);
+}
+
 // ------------------------------------------------------------------ github ---
 
 function token() {
@@ -208,6 +218,7 @@ async function main() {
   }
 
   const files = collect();
+  const have = new Set(files);
   const changed = [];
   const same = [];
   let bytes = 0;
@@ -219,12 +230,20 @@ async function main() {
     else changed.push({ rel, buf, sha, status: existing.has(rel) ? "M" : "A" });
   }
 
+  /* Retiring a file locally has to retire it remotely too: the new tree is built
+     with base_tree, so any path left unmentioned simply survives. */
+  const gone = [...existing.keys()].filter((p) => !have.has(p) && managed(p)).sort();
+
   console.log(`\nfiles      : ${files.length} total, ${bytes ? human(bytes) : "0 B"}`);
   console.log(`unchanged  : ${same.length}`);
   console.log(`to publish : ${changed.length}`);
   for (const c of changed) console.log(`   ${c.status}  ${human(c.buf.length).padStart(9)}  ${c.rel}`);
+  if (gone.length) {
+    console.log(`to retire  : ${gone.length}`);
+    for (const p of gone) console.log(`   D  ${" ".padStart(9)}  ${p}`);
+  }
 
-  if (!changed.length) {
+  if (!changed.length && !gone.length) {
     console.log("\nnothing to do — the repo already matches this folder.");
   } else if (!push) {
     console.log("\nDRY RUN — pass --push to create the commit.");
@@ -239,14 +258,20 @@ async function main() {
       if (blob.sha !== c.sha) throw new Error(`blob sha mismatch for ${c.rel}`);
       tree.push({ path: c.rel, mode: "100644", type: "blob", sha: blob.sha });
     }
+    /* sha:null is how the Git Data API spells "remove this path". */
+    for (const p of gone) tree.push({ path: p, mode: "100644", type: "blob", sha: null });
     console.log("ok");
 
     const newTree = await api("POST", `/repos/${SLUG}/git/trees`, { base_tree: baseTree, tree });
+    const total = changed.length + gone.length;
     const message =
-      changed.length === 1
-        ? `Update ${changed[0].rel}`
-        : `Publish mtoo.vip — ${changed.length} file(s)\n\n` +
-          changed.map((c) => `${c.status} ${c.rel}`).join("\n");
+      total === 1
+        ? changed.length
+          ? `Update ${changed[0].rel}`
+          : `Remove ${gone[0]}`
+        : `Publish mtoo.vip — ${total} file(s)\n\n` +
+          changed.map((c) => `${c.status} ${c.rel}`).join("\n") +
+          (gone.length ? "\n" + gone.map((p) => `D ${p}`).join("\n") : "");
     const commit = await api("POST", `/repos/${SLUG}/git/commits`, {
       message,
       tree: newTree.sha,

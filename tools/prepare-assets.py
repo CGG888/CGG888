@@ -40,9 +40,6 @@ SHOTS = [
     #   repo, so it is deliberately not treated as a second project.
     (r"channel-sentinel\public\preview.png",              "projects/sentinel-01.webp"),
     (r"channel-sentinel\public\preview2.png",             "projects/sentinel-02.webp"),
-    # HeadplaneCN — headscale console, localised and extended for fnOS
-    (r"headplaneCN\docs\assets\machine-dark.png",         "projects/headplane-01.webp"),
-    (r"headplaneCN\docs\assets\acls-dark.png",            "projects/headplane-02.webp"),
 ]
 
 # payment QRs live in the workspace root; they are PNG on purpose — a lossy
@@ -152,7 +149,7 @@ def og_card(dst):
     d.line([(M, 470), (W - M, 470)], fill=(0, 255, 255, 70), width=1)
     d.text((M, 496), "CGG888 · 超哥哥", font=han_s, fill=FG + (255,))
     d.text((M, 536), "IPTV · STREAMING · SELF-HOSTED", font=mono_s, fill=DIM + (255,))
-    d.text((W - M, 540), "NO ADS · NO ACCOUNTS · MIT", font=mono_s, fill=DIM + (255,), anchor="ra")
+    d.text((W - M, 540), "NO ADS · NO ACCOUNTS · OPEN SOURCE", font=mono_s, fill=DIM + (255,), anchor="ra")
 
     ensure(dst)
     im.convert("RGB").save(dst, "PNG", optimize=True)

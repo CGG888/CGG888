@@ -5,7 +5,7 @@
 <script>document.documentElement.classList.add("js");</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>作品 — mtoo.vip</title>
-<meta name="description" content="门口只挂四件：SrcBox、channel-sentinel、iptvnator、headplaneCN，全部带真实截图。置顶是我自己点的，不是算法给的——主业币圈的技术支持与服务不在这个页面上，一百多个仓库里只有这四个算我的作品。">
+<meta name="description" content="门口只挂两件：SrcBox 与 channel-sentinel，都是带真实截图的原创项目。置顶是我自己点的，不是算法给的——主业币圈的技术支持与服务不在这个页面上，一百多个仓库里只有这两件算我的作品。">
 <link rel="canonical" href="https://mtoo.vip/projects.html">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0a0a0f">
@@ -43,9 +43,9 @@
 
 <header class="phead">
   <div class="shell">
-    <div class="crumb"><b>INDEX</b><span>/</span><span>PINNED × 4</span><span>/</span><span>REAL SCREENSHOTS</span></div>
-    <h1>门口只挂<br>四件东西。</h1>
-    <p class="lead sub" data-reveal>置顶是我自己挑的，不是按星数排的。<br>主业币圈的技术支持与服务不在这个页面上——工作和作品，我分得很清。<br>剩下的 <span class="cy" id="repo-count">100+</span> 个仓库躺在 GitHub 上，大多是我在学的、在改的、和暂时没想明白的。</p>
+    <div class="crumb"><b>INDEX</b><span>/</span><span>PINNED × 2</span><span>/</span><span>REAL SCREENSHOTS</span></div>
+    <h1>门口只挂<br>两件东西。</h1>
+    <p class="lead sub" data-reveal>置顶是我自己挑的，不是按星数排的。<br>主业币圈的技术支持与服务不在这个页面上——工作和作品，我分得很清。<br>剩下的 <span class="cy" id="repo-count" data-count="rest">108</span> 个仓库躺在 GitHub 上，大多是我在学的、在改的、和暂时没想明白的。</p>
   </div>
 </header>
 
@@ -54,8 +54,8 @@
     <span><b>C#</b> · .NET 8 · LIBMPV · WPF</span>
     <span><b>NODE.JS</b> · FFMPEG · FFProbe</span>
     <span><b>TYPESCRIPT</b> · REACT</span>
-    <span><b>DOCKER</b> · NAS · FNOS · HEADSCALE</span>
-    <span><b>MIT</b> · 无广告 · 无账号墙</span>
+    <span><b>DOCKER</b> · NAS · 内网穿透 · WEBDAV</span>
+    <span><b>全部公开</b> · 无广告 · 无账号墙</span>
     <span><b>币圈</b> · 技术支持 · 服务（不在本页）</span>
     <span><b>凌晨三点</b> · 通常还在改东西</span>
     <span><b>MTOO.VIP</b> · 自己写、自己用、自己修</span>
@@ -68,25 +68,23 @@
     <div class="sec-h">
       <span class="sec-n">000</span>
       <h2 class="sec-t">清点</h2>
-      <span class="sec-s">四个仓库，两种来历</span>
+      <span class="sec-s">两个仓库，都是自己写的</span>
     </div>
     <div class="split split-75">
       <div class="term" data-term data-reveal>
 <span class="tl"><span class="p">$</span> gh pinned --list --with-numbers</span>
 <span class="tl"> </span>
-<span class="tl"><span class="w">SrcBox</span>              <span class="gr">132★</span>  <span class="c">C# · 原创 · Windows 播放器</span></span>
-<span class="tl"><span class="w">channel-sentinel</span>    <span class="gr">74★</span>  <span class="c">JS · 原创 · 信号检测</span></span>
-<span class="tl"><span class="w">iptvnator</span>            <span class="gr">49★</span>  <span class="c">TS · Fork · 跨平台播放器</span></span>
-<span class="tl"><span class="w">headplaneCN</span>          <span class="gr">0★</span>   <span class="c">TS · Fork · 自托管面板中文分支</span></span>
+<span class="tl"><span class="w">SrcBox</span>              <span class="gr" data-live="stars" data-repo="SrcBox">132★</span>  <span class="c">C# · 原创 · Windows 播放器</span></span>
+<span class="tl"><span class="w">channel-sentinel</span>    <span class="gr" data-live="stars" data-repo="channel-sentinel">74★</span>  <span class="c">JS · 原创 · 信号检测</span></span>
 <span class="tl"> </span>
-<span class="tl"><span class="c">—— 两个是我从零写的，两个是别人的项目，我改了它。</span></span>
-<span class="tl"><span class="c">—— 数字每晚重新抓一次，不是写死在页面里的。</span></span>
+<span class="tl"><span class="c">—— 两件都是从零写的，都在我自己的机器上跑着。</span></span>
+<span class="tl"><span class="c">—— 星标与版本是页面打开时现抓的，不是写死在这里的。</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="p">$</span> ls -1 ~/工作</span>
 <span class="tl"><span class="c">（主业：币圈的技术支持与服务。工作不进作品页，这是我给自己定的规矩。）</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="p">$</span> gh repo list --limit 200 | wc -l</span>
-<span class="tl"><span class="w">108</span>  <span class="c">—— 其余 104 个都在角落里，我不打算把它们摆出来</span></span>
+<span class="tl"><span class="w" data-count="repos">110</span>  <span class="c">—— 其余 <span data-count="rest">108</span> 个都在角落里，我不打算把它们摆出来</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="p">$</span> <span class="term-cur" aria-hidden="true">▮</span></span>
       </div>
@@ -94,19 +92,19 @@
         <p class="lead" data-reveal>一个工具真正的验收标准只有一个：<br><em>它今天有没有在我自己的机器上跑着。</em></p>
         <div class="body" data-reveal>
           <p>所以这个页面不按「技术含量」排，也不按「完成度」排。它按我用它的频率排。</p>
-          <p>排在最前面的那个播放器，我几乎每天都在用。最后那个面板，我每次改完都会自己去点一遍。</p>
+          <p>排在最前面的那个播放器，我几乎每天都在用。第二个我让它自己 24 小时盯着信号——断了我就得知道。</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 002 · THE FOUR ===================== -->
-<section class="sec" id="the-four">
+<!-- ===================== 002 · THE TWO ===================== -->
+<section class="sec" id="the-two">
   <div class="shell">
     <div class="sec-h">
       <span class="sec-n">001</span>
-      <h2 class="sec-t">四件东西</h2>
+      <h2 class="sec-t">两件东西</h2>
       <span class="sec-s">截图都是真的，不是渲染图</span>
     </div>
     <div class="pins" id="pinned" data-detail="full" data-layout="rack" data-reveal></div>
@@ -119,7 +117,7 @@
   <div class="shell">
     <div class="sec-h">
       <span class="sec-n">002</span>
-      <h2 class="sec-t">为什么只有四件</h2>
+      <h2 class="sec-t">为什么只有两件</h2>
       <span class="sec-s">关于「不把仓库全弄上去」</span>
     </div>
     <div class="split">
@@ -127,7 +125,7 @@
         <p>我的 GitHub 上有一百多个仓库。如果把它们全铺在这个页面上，你会看到一片灰色——因为我确实 fork 了很多东西：路由器固件、媒体库、面板、订阅转换、一堆我某天凌晨觉得「这个我得看看」的项目。</p>
         <p>它们都是真的，也都对我有用。但它们不是我的作品。<span class="cy">一本书架不该假装自己写的每一本书。</span></p>
         <p>还要先说清一件事：<b>主业是币圈的技术支持与服务，那不在这里。</b>那些东西没有仓库、没有截图，也不该出现在一个个人作品页上。<span class="cy">工作用来吃饭，作品用来证明我还没把自己整个交出去。</span></p>
-        <p>所以我做了个很粗暴的决定：<b>只有置顶的才配出现在这个页面上。</b>置顶是我自己在 GitHub 上点的，不是算法给的。我想挂四件，就只有四件。</p>
+        <p>所以我做了个很粗暴的决定：<b>只有置顶的才配出现在这个页面上。</b>置顶是我自己在 GitHub 上点的，不是算法给的。我想挂两件，就只有两件。</p>
         <p>如果你真的想看我都在折腾什么，直接去 GitHub 翻——那里是全部，包括那些半途而废的。这里只是门口。</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
           <a class="btn" href="https://github.com/CGG888?tab=repositories" target="_blank" rel="noopener">翻全部仓库 <span>↗</span></a>
@@ -159,7 +157,7 @@
       <li><span class="k2">服务端</span><span>Node.js · Express · ffprobe · PM2 · Docker</span><span class="d2">channel-sentinel</span></li>
       <li><span class="k2">前端</span><span>原生 JavaScript / TypeScript · 不引框架的中小型界面</span><span class="d2">通用</span></li>
       <li><span class="k2">流媒体</span><span>UDP 组播 · RTP · HLS · mpegts.js · hls.js · XMLTV / EPG</span><span class="d2">通用</span></li>
-      <li><span class="k2">自托管</span><span>Headscale · Headplane · fnOS · NAS · 内网穿透 · WebDAV</span><span class="d2">headplaneCN</span></li>
+      <li><span class="k2">自托管</span><span>Docker · NAS · 反向代理 · 内网穿透 · 媒体库 · 监控 · WebDAV</span><span class="d2">通用</span></li>
       <li><span class="k2">这个站</span><span>手写 HTML / CSS / JS，零依赖，零构建，GitHub Pages</span><span class="d2">mtoo.vip</span></li>
     </ul>
   </div>
@@ -169,7 +167,7 @@
 <section class="sec" id="outro">
   <div class="shell">
     <div class="pull" data-reveal>
-      代码全在 GitHub 上，全部 MIT。<br>
+      代码全在 GitHub 上，全部公开。<br>
       你可以拿去改，也可以拿去骂——<em>但请先把它跑起来。</em>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
@@ -208,9 +206,9 @@
         </ul>
       </div>
       <div>
-        <h4 class="k">许可</h4>
+        <h4 class="k">原则</h4>
         <ul>
-          <li><span>代码 MIT</span></li>
+          <li><span>代码全部公开</span></li>
           <li><span>无广告 · 无追踪</span></li>
           <li><span>不设会员</span></li>
         </ul>
@@ -218,7 +216,7 @@
     </div>
     <div class="foot-bottom">
       <span>© <span data-year>2026</span> MTOO.VIP — 保留所有权利</span>
-      <span>数据每晚重新抓取 · 星标为实时值</span>
+      <span>星标与版本为实时值 · 打开页面即抓取</span>
     </div>
   </div>
 </footer>

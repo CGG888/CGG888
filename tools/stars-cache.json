@@ -1,10 +1,8 @@
 {
-  "updatedAt": "2026-10-11T10:16:02.887Z",
+  "updatedAt": "2026-10-15T00:59:32.600Z",
   "note": "last verified star counts; fallback only",
   "stars": {
-    "SrcBox": 132,
-    "channel-sentinel": 74,
-    "iptvnator": 49,
-    "headplaneCN": 0
+    "SrcBox": 144,
+    "channel-sentinel": 75
   }
 }

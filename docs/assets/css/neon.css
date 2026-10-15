@@ -234,6 +234,21 @@ h2,h3{text-shadow:0 0 18px rgba(0,255,255,.35)}
   .term-cur{display:none !important}
 }
 
+/* ---------- 8a-2 · live numbers ----------
+   Every star / fork / release value on the page is re-read from the repos when
+   the page opens. .is-fresh is a short flash so the swap is visible rather than
+   silent; the stamp only turns cyan once the repos have actually answered, so
+   "LIVE" is never claimed while the numbers are still the build snapshot. */
+@keyframes live-flash{
+  0%{color:var(--mg);text-shadow:0 0 24px rgba(255,0,255,.75)}
+  100%{color:inherit}
+}
+[data-live].is-fresh{animation:live-flash 1.8s ease-out}
+#data-stamp.is-live{color:var(--cy);text-shadow:var(--glow-text)}
+@media (prefers-reduced-motion:reduce){
+  [data-live].is-fresh{animation:none}
+}
+
 /* ---------- 8b · manifesto band (full bleed, deliberately unruly) ---------- */
 .mani{margin:0;font-weight:700;line-height:.98;letter-spacing:-.005em}
 .mani-1{font-size:clamp(22px,3.2vw,58px);color:var(--faint)}

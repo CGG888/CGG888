@@ -52,7 +52,7 @@ python tools/prepare-assets.py  # → docs/assets/img/**（需要 Pillow）
 所以任何一次限流都不会把已知星标清零。
 
 `prepare-assets.py` 从**相邻仓库**读取原始截图
-（`D:\github\SrcBox`、`D:\github\channel-sentinel`、`D:\github\headplaneCN`），
+（`D:\github\SrcBox`、`D:\github\channel-sentinel`），
 所以它只能在这台机器上重跑；产物已提交，线上不依赖它。
 
 ## 4. 发布
@@ -156,7 +156,7 @@ CGG888_PROFILE.md         ← 历史遗留的模板副本，没被引用，保�
 DEPLOY.md  .gitignore
 docs/                     ← 只有这里会发布
   index.html              首页 · 诊断报告
-  projects.html           作品 · 门口只挂四件东西
+  projects.html           作品 · 门口只挂两件东西
   about.html              关于 · 一份很长的自白
   sponsor.html            赞助 · 不必赞助，也能用一辈子
   404.html                glitch 404
@@ -164,7 +164,7 @@ docs/                     ← 只有这里会发布
   assets/
     css/neon.css          唯一全站样式表
     js/site.js            reveal / 滚动 ticker / 抽屉 / 复制
-    js/projects.js        渲染置顶四件东西
+    js/projects.js        渲染置顶两件 + 打开页面时现抓星标/版本
     img/og.png            OG 分享卡
     img/projects/*.webp   9 张真实截图
     img/qr/wechat.png     微信收款码（原图 764×760）

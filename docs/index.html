@@ -5,7 +5,7 @@
 <script>document.documentElement.classList.add("js");</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>mtoo.vip — 别人笑我太疯癫</title>
-<meta name="description" content="币圈从不收盘，阳台只认节气。主业是币圈的技术支持与服务，副业是把信号从别人的服务器上一路搬回自己的硬盘——机顶盒扔了，广告位不卖，会员墙不建。顺手写了 SrcBox、频道哨兵、HeadplaneCN，全 MIT，全部自托管。">
+<meta name="description" content="币圈从不收盘，阳台只认节气。主业是币圈的技术支持与服务，副业是把信号从别人的服务器上一路搬回自己的硬盘——机顶盒扔了，广告位不卖，会员墙不建。顺手写了 SrcBox 和频道哨兵，全部自托管。">
 <link rel="canonical" href="https://mtoo.vip/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0a0a0f">
@@ -77,10 +77,10 @@
     <span><b>IPTV</b> · 组播 · 单播 · EPG</span>
     <span><b>SELF-HOSTED</b> · 自托管 · 家庭服务器</span>
     <span><b>NO ADS</b> · 无广告 · 无账号墙</span>
-    <span><b>MIT</b> · 全部开源</span>
+    <span><b>OPEN SOURCE</b> · 全部开源</span>
     <span><b>WINDOWS</b> · .NET · LIBMPV · WPF</span>
     <span><b>NODE.JS</b> · FFMPEG · FFProbe</span>
-    <span><b>DOCKER</b> · NAS · FNOS · HEADSCALE</span>
+    <span><b>DOCKER</b> · NAS · 内网穿透 · WEBDAV</span>
     <span><b>币圈</b> · 技术支持 · 服务</span>
     <span><b>7×24</b> · 不收盘 · 凌晨三点还醒着</span>
     <span><b>茶 · 花 · 菜</b> · 只按节气长</span>
@@ -114,7 +114,6 @@
 <span class="tl">     CGroup: /obsession.slice</span>
 <span class="tl">             ├─ srcbox.service        <span class="ok">●</span> 正在播放</span>
 <span class="tl">             ├─ sentinel.service      <span class="ok">●</span> <span class="w">783</span> 路信号在线</span>
-<span class="tl">             ├─ headplane.service     <span class="ok">●</span> headscale 正常</span>
 <span class="tl">             ├─ 币圈.service          <span class="warn">◐</span> 波动中，正常</span>
 <span class="tl">             ├─ 搬家.service          <span class="warn">◐</span> 进度 61%，还在搬</span>
 <span class="tl">             ├─ 浇水.timer            <span class="ok">●</span> 每早 06:00</span>
@@ -126,7 +125,7 @@
 <span class="tl"><span class="err">[ !! ]</span> 拒绝 membership-wall          <span class="c">—— 拒绝理由：这不是技术问题</span></span>
 <span class="tl"><span class="err">[ !! ]</span> 丢弃 tracking-pixel           <span class="c">—— 收件人不详，已就地销毁</span></span>
 <span class="tl"><span class="ok">[ ok ]</span> 停用 hype-engine               <span class="c">—— 不追叙事，只研究技术</span></span>
-<span class="tl"><span class="warn">[warn]</span> 检测到 <span class="w">108</span> 个公开仓库，其中 <span class="w">4</span> 个挂在门口</span>
+<span class="tl"><span class="warn">[warn]</span> 检测到 <span class="w" data-count="repos">110</span> 个公开仓库，其中 <span class="w" data-count="pinned">2</span> 个挂在门口</span>
 <span class="tl"><span class="ok">[ ok ]</span> 数据留在本机                  <span class="c">—— 没有例外，没有「为了改善体验」</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="p">$</span> cat ~/阳台/清单</span>
@@ -228,7 +227,7 @@
         <div class="decl-n">07</div>
         <h3 class="decl-t">说不清的动机</h3>
         <div class="decl-d">
-          有人问我图什么。门口这四件东西，没有收入，没有流量，没有人要求我做，也没有人拦着我。<br><br>
+          有人问我图什么。门口这两件东西，没有收入，没有流量，没有人要求我做，也没有人拦着我。<br><br>
           如果非要一个理由：<b>我想让那条信号多亮一会儿</b>——先亮在我自己的屏幕上。别的都是副产品。
         </div>
       </article>
@@ -273,9 +272,7 @@
 <span class="tl"><span class="p">$</span> ls -1 ~/projects</span>
 <span class="tl"><span class="w">SrcBox/</span>            <span class="c">Windows 上的 IPTV 播放器</span></span>
 <span class="tl"><span class="w">channel-sentinel/</span>   <span class="c">批量检测每一路信号</span></span>
-<span class="tl"><span class="w">iptvnator/</span>          <span class="c">跨平台播放器，我在改它</span></span>
-<span class="tl"><span class="w">headplaneCN/</span>        <span class="c">自托管面板的中文分支</span></span>
-<span class="tl"><span class="c">共 4 项 —— 门口只挂这些，剩下的躺在角落里等我想起来</span></span>
+<span class="tl"><span class="c">共 2 项 —— 门口只挂这些，剩下的躺在角落里等我想起来</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="p">$</span> git log --oneline -5</span>
 <span class="tl"><span class="yl">a91f3c2</span> 又是一次凌晨的提交</span>
@@ -284,8 +281,8 @@
 <span class="tl"><span class="yl">e5510af</span> 删掉三个我自己都不用的设置项</span>
 <span class="tl"><span class="yl">1c02d7b</span> 补注释，免得三个月后看不懂</span>
 <span class="tl"> </span>
-<span class="tl"><span class="p">$</span> echo $LICENSE</span>
-<span class="tl"><span class="gr">MIT</span> <span class="c">—— 一直都会是 MIT</span></span>
+<span class="tl"><span class="p">$</span> gh repo view CGG888/SrcBox --json visibility</span>
+<span class="tl">{"visibility":<span class="gr">"public"</span>} <span class="c">—— 代码全部公开，随时可以拿走</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="p">$</span> ./next.sh <span class="c">────────────────►</span> <span class="term-cur" aria-hidden="true">▮</span></span>
       </div>
@@ -303,19 +300,19 @@
     </div>
     <div class="hud" data-reveal>
       <div class="hud-cell">
-        <div class="hud-n n">108</div>
+        <div class="hud-n n" data-count="repos">110</div>
         <div class="hud-l">Public repos</div>
-        <p class="hud-d">公开仓库总数。挂在门口的只有四个，剩下的躺在角落里等我想起来。币圈那边的工作不进这个计数——<b>数量不是成就。</b></p>
+        <p class="hud-d">公开仓库总数。挂在门口只有两个，剩下的躺在角落里等我想起来。币圈那边的工作不进这个计数——<b>数量不是成就。</b></p>
       </div>
       <div class="hud-cell">
-        <div class="hud-n n">132<small>★</small></div>
+        <div class="hud-n n"><span data-live="stars-raw" data-repo="SrcBox">144</span><small>★</small></div>
         <div class="hud-l">Top signal</div>
         <p class="hud-d">最亮的那颗星在 SrcBox 上。有人在真的用它，而且没人为它付过一分钱——<b>这件事到现在还让我有点意外。</b></p>
       </div>
       <div class="hud-cell">
-        <div class="hud-n n">04</div>
+        <div class="hud-n n" id="hud-pinned" data-count="pinned-pad">02</div>
         <div class="hud-l">Pinned</div>
-        <p class="hud-d">置顶只有四个。<b>门口挂满东西的人，通常没有一件是天天在用的。</b></p>
+        <p class="hud-d">置顶只有两个。<b>门口挂满东西的人，通常没有一件是天天在用的。</b></p>
       </div>
       <div class="hud-cell">
         <div class="hud-n n">00</div>
@@ -337,7 +334,7 @@
   <div class="shell">
     <div class="sec-h">
       <span class="sec-n">004</span>
-      <h2 class="sec-t">门口的四件东西</h2>
+      <h2 class="sec-t">门口的两件东西</h2>
       <span class="sec-s">GitHub 上的置顶，一件不多。少不是谦虚，是筛过</span>
     </div>
     <div class="pins" id="pinned" data-detail="compact" data-layout="loadout" data-reveal></div>
@@ -385,7 +382,7 @@
       <div class="panel panel-tick" data-reveal>
         <p class="k">NOTE / 关于钱</p>
         <p class="body" style="margin-top:14px">
-          这个站没有广告、没有会员、没有付费版、没有统计脚本。所有代码一直是 MIT。想给钱的话，赞助页上有两张收款码——<span class="cy">不给，也一样能用一辈子，而且我不会因此少写一行代码。</span>
+          这个站没有广告、没有会员、没有付费版、没有统计脚本。所有代码一直是公开的。想给钱的话，赞助页上有两张收款码——<span class="cy">不给，也一样能用一辈子，而且我不会因此少写一行代码。</span>
         </p>
       </div>
     </div>
@@ -421,9 +418,9 @@
         </ul>
       </div>
       <div>
-        <h4 class="k">许可</h4>
+        <h4 class="k">原则</h4>
         <ul>
-          <li><span>代码 MIT</span></li>
+          <li><span>代码全部公开</span></li>
           <li><span>无广告 · 无追踪</span></li>
           <li><span>不设会员</span></li>
         </ul>

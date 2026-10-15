@@ -7,7 +7,7 @@
 主业是币圈的 **技术支持与服务**，副业是把 IPTV、流媒体和自托管工具一件件搬回自己家。<br>
 喝茶、养花、种点菜，顺手把一切新东西拆开看一遍。
 
-不接广告 · 不做会员 · 不写「该内容仅会员可见」 · 全部 **MIT**
+不接广告 · 不做会员 · 不写「该内容仅会员可见」
 
 [**mtoo.vip**](https://mtoo.vip) &nbsp;·&nbsp; [作品](https://mtoo.vip/projects) &nbsp;·&nbsp; [关于](https://mtoo.vip/about) &nbsp;·&nbsp; [赞助](https://mtoo.vip/sponsor)
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 门口只挂四件东西
+## 门口只挂两件东西
 
 > 其余一百多个仓库是 fork、试验和没想明白的东西，算不上作品。
 > 少不是谦虚，是筛过。
@@ -42,30 +42,6 @@ IPTV 组播 / 单播流的批量检测与管理。让每一路信号都能被看
 `Node.js` `Express` `ffprobe`
 
 ![stars](https://img.shields.io/github/stars/CGG888/channel-sentinel?style=flat-square&color=00b3b3&label=%E2%98%85)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [iptvnator](https://github.com/CGG888/iptvnator)
-
-跨平台 IPTV 播放器。我把上游改得更适合中国大陆这边的源。
-
-`TypeScript` `Electron`
-
-![stars](https://img.shields.io/github/stars/CGG888/iptvnator?style=flat-square&color=00b3b3&label=%E2%98%85)
-
-</td>
-<td width="50%" valign="top">
-
-### [HeadplaneCN](https://github.com/CGG888/headplaneCN)
-
-Headplane 的中文分支。面向自托管 NAS 调优，尤其是飞牛 fnOS 这类部署。
-
-`TypeScript` `React` `Headscale`
-
-![stars](https://img.shields.io/github/stars/CGG888/headplaneCN?style=flat-square&color=00b3b3&label=%E2%98%85)
 
 </td>
 </tr>

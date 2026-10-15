@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-11T10:16:02.887Z",
+  "generatedAt": "2026-10-15T00:59:32.600Z",
   "source": "GitHub GraphQL pinnedItems",
   "starsLive": true,
   "account": {
     "login": "CGG888",
-    "publicRepos": 108,
+    "publicRepos": 110,
     "followers": 18,
     "createdAt": "2021-11-12",
     "bio": "别人笑我太疯癫，我笑他人看不穿！"
@@ -18,13 +18,13 @@
       "homepage": "https://srcbox.top",
       "description": "源匣-SrcBox是一款专为 Windows 平台打造的高性能、现代化的 IPTV 播放器。  它基于强大的 libmpv 播放内核构建，结合 WPF 的现代化界面设计，为您带来流畅、稳定的直播观看体验。不仅支持 M3U 播放列表、EPG 电子节目单、回看等核心功能，还针对 IPTV 场景进行了深度优化（如 FCC 快速切台、UDP 组播优化），是您在 PC 上观看电视直播的理想选择。",
       "note": "我自己在用的那个播放器。Windows、libmpv 内核、WPF 界面，没有广告位。",
-      "stars": 132,
-      "forks": 15,
+      "stars": 144,
+      "forks": 18,
       "isFork": false,
       "lang": "C#",
       "topics": [],
-      "release": "1.0.1",
-      "pushedAt": "2026-10-10",
+      "release": "v1.1.18",
+      "pushedAt": "2026-10-14",
       "cover": "assets/img/projects/srcbox-01.webp",
       "gallery": [
         "assets/img/projects/srcbox-03.webp",
@@ -51,12 +51,12 @@
       "homepage": "",
       "description": "频道哨兵（Channel Sentinel）是一款基于 Node.js + Express + ffprobe 的 IPTV 组播/单播流检测与管理工具，提供现代化 Web 界面与丰富生态导出。支持单播、组播批量检测、EPG 与回看、单播组播独立播放器、内/外网模式、台标模板（内/外网区分）、多种导出（M3U/TXT/JSON、TVBox、Xtream）、安全登录与令牌保护等能力，适用于运营网与实验环境中的频道维护、线路切换与对接。",
       "note": "这个仓库以前叫 Iptv-Checker，旧链接会跳到这里。",
-      "stars": 74,
-      "forks": 14,
+      "stars": 75,
+      "forks": 15,
       "isFork": false,
       "lang": "JavaScript",
       "topics": [],
-      "release": "v1.0.0",
+      "release": "v2.0.1",
       "pushedAt": "2026-07-30",
       "cover": "assets/img/projects/sentinel-01.webp",
       "gallery": [
@@ -69,56 +69,6 @@
         "台标模板统一到 /api/logo，内外网分开",
         "导出 M3U · TXT · JSON · TVBox · Xtream",
         "Docker 镜像 cgg888/channel-sentinel"
-      ]
-    },
-    {
-      "name": "iptvnator",
-      "cn": "跨平台播放器",
-      "kind": "fork",
-      "url": "https://github.com/CGG888/iptvnator",
-      "homepage": "",
-      "description": "IPTVnator 是一款跨平台、开源的 IPTV 播放器，支持播放和管理 m3u/m3u8 播放列表。更好适配中国大陆常见的 IPTV 使用场景。",
-      "note": "别人的项目（上游 4gray/iptvnator）。我把它改得更适合中国大陆这边的源。",
-      "stars": 49,
-      "forks": 5,
-      "isFork": true,
-      "lang": "TypeScript",
-      "topics": [],
-      "release": "v0.17.2",
-      "pushedAt": "2026-03-05",
-      "cover": "",
-      "gallery": [],
-      "points": [
-        "适配中国大陆常见的 IPTV 使用场景",
-        "m3u / m3u8 播放列表的播放与管理",
-        "跨平台客户端"
-      ]
-    },
-    {
-      "name": "headplaneCN",
-      "cn": "Headplane 中文分支",
-      "kind": "fork",
-      "url": "https://github.com/CGG888/headplaneCN",
-      "homepage": "https://cgg888.github.io/headplaneCN/",
-      "description": "HeadplaneCN 是 Headplane 的分支（fork），面向自托管 NAS 场景调优， 尤其是飞牛 fnOS 这类「headscale 以原生进程运行、面板跑在 Docker 里」的部署。 在保留上游全部功能的基础上，本分支补齐了三语界面，并新增 DERP 地图在线编辑、中继地址自动同步、 官方区域镜像、告警通知、配置快照与操作审计等能力。",
-      "note": "上游 Headplane 的分支：补上中文，并针对自托管 NAS 调优。",
-      "stars": 0,
-      "forks": 0,
-      "isFork": true,
-      "lang": "TypeScript",
-      "topics": [],
-      "release": "v0.8.0",
-      "pushedAt": "2026-10-11",
-      "cover": "assets/img/projects/headplane-01.webp",
-      "gallery": [
-        "assets/img/projects/headplane-02.webp"
-      ],
-      "points": [
-        "三语界面（中 / 英 / 日）",
-        "DERP 地图在线编辑、中继地址自动同步",
-        "告警通知、配置快照与操作审计",
-        "面向飞牛 fnOS 这类「headscale 跑原生进程、面板跑 Docker」的部署",
-        "Docker 镜像 ghcr.io/cgg888/headplanecn"
       ]
     }
   ]
