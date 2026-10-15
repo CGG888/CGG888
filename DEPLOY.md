@@ -86,6 +86,26 @@ node tools/deploy.cjs --push --pages  # 顺便开通 Pages（main /docs）
 token 依次取 `$GH_TOKEN` → `~/.git-credentials` 里的 github.com 条目（需要 `repo` scope），
 **从不打印**。发布前先 `node tools/build.cjs` 跑到 `BUILD OK`。
 
+**本地删掉一个文件，线上也会跟着删。** 新树是用 `base_tree` 建的，没被提到的路径会原样保留，
+所以 `deploy.cjs` 会拿「远端有、本地没有、且属于本工具管辖」的路径去发 `sha: null` 删除项，
+干跑时会打印在 `to retire` 一栏。判断归属用的是 `managed()`——只认 `docs/**`、`tools/*.cjs|py|json`
+和三个根文件，所以同仓库里的 `CGG888_PROFILE.md` 永远不会被误删。
+
+### 4.2.1 页面上的实时数字
+
+星标、fork、版本、最后提交都不是写死的：`projects.js` 在页面打开时现抓，
+`docs/index.html` 的读数格与 `docs/projects.html` 的 `gh pinned --list` 都带 `data-live` / `data-repo` 钩子，
+`tools/build-projects.cjs` 生成的 `projects.json` 只是**构建快照**（无 JS、断网、接口挂了时的兜底）。
+
+抓取顺序是 **api.github.com → ungh.cc**，理由写在 `projects.js` 顶部注释里：
+GitHub 的限额是公开的（匿名 60 次/小时，一次页面消耗 4 次），ungh.cc 没有限额文档、
+而且一并发几个请求就会回 403/429，所以只能当备胎。为了不把 60 次额度浪费在反复刷新的自己身上，
+成功的取值会在 `sessionStorage` 里缓存 5 分钟。
+
+两种失败都必须**如实说出来**：接口全挂时页面保留快照并把戳记改成 `SNAPSHOT …（实时源暂时不可用）`，
+只有真的抓到了才显示青色的 `LIVE hh:mm · n/m 个仓库已实时核对`。
+单个 `/releases` 请求失败时 `release` 记为 `null` 而不是空串——否则会用 `—` 把快照里正确的版本号盖掉。
+
 ### 4.3 首次开通 Pages 之后要做的事
 
 1. 确认 `docs/CNAME` 内容是 `mtoo.vip`（已就位）。
